@@ -37,7 +37,7 @@ namespace NeilsonAssessment.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMemoryCache();
-            //services.AddCors();
+            services.AddCors();
 
             //If policy needs to be defined
             //services.AddAuthorization(options => options.AddPolicy("create", p => p.Requirements))
