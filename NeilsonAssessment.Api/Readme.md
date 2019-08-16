@@ -4,7 +4,7 @@
  git clone https://github.com/shresthaanij/NeilsonExecriseApi.git
  - If you have docker, from inside folder,
     docker image -t builld myimageapi .
-    docker container run -itd --name neilsonapi neilsonapi
+    docker container run -itd --name neilsonapi -p 80:80 neilsonapi
     (now from Postman, nagivate to url, http://localhost/api/cars)
  - If debug from Visual Studio, run the solution.
 
