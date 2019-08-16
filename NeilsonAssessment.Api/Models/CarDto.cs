@@ -16,7 +16,7 @@ namespace NeilsonAssessment.Api.Models
         [Required(ErrorMessage = "Car Year is required")]
         public string Year { get; set; }
 
-        [Range(0, long.MaxValue, ErrorMessage = "Car current milage is required")]
+        [Range(0, long.MaxValue, ErrorMessage = "Car current milage must be a positve number")]
         public long CurrentMileage { get; set; }
 
         internal void PopulateLinks(IUrlHelper urlHelper)
