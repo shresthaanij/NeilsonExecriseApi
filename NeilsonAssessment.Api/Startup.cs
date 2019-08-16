@@ -40,7 +40,7 @@ namespace NeilsonAssessment.Api
             services.AddCors();
 
             //If policy needs to be defined
-            //services.AddAuthorization(options => options.AddPolicy("create", p => p.Requirements))
+            //services.AddAuthorization(options => options.AddPolicy("create", p => p.Requirements), "pets:create")
 
             services.AddMvc()
                 .AddMvcOptions(o =>
