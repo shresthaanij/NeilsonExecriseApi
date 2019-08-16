@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NeilsonAssessment.Api.Entities;
@@ -59,7 +56,10 @@ namespace NeilsonAssessment.Api.Controllers
         {
             var car = await _carsRepository.InsertCarAsync(AutoMapper.Mapper.Map<Car>(model));
 
-            return Ok();
+            var carToReturn = AutoMapper.Mapper.Map<CarDto>(car);
+            carToReturn.PopulateLinks(_urlHelper);
+
+            return CreatedAtRoute("GetCarById", new { id = carToReturn.Id }, carToReturn);
         }
 
         [HttpPut("{id}", Name = "UpdateCar")]
